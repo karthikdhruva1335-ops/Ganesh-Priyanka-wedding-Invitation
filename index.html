@@ -52,7 +52,7 @@
       <div class="ornament">✦</div><h2>Wedding Celebrations</h2>
       <p class="intro">Please join us as we begin this beautiful new chapter. Your presence and blessings will mean the world to us.</p>
       <div class="event-grid">
-        <article class="event"><div class="symbol">❦</div><h3>Aaratishthe / Reception</h3><p><strong>Wednesday, 28 October 2026</strong></p><p>Starting from 7:00 PM</p><p>H.D. Devegowda Samudaya Bhavana</p></article>
+        <article class="event"><div class="symbol">❦</div><h3>Reception</h3><p><strong>Wednesday, 28 October 2026</strong></p><p>Starting from 7:00 PM</p><p>H.D. Devegowda Samudaya Bhavana</p></article>
         <article class="event"><div class="symbol">❋</div><h3>Dhaara Muhurtha</h3><p><strong>Thursday, 29 October 2026</strong></p><p>Between 9:40 AM and 10:40 AM</p><p>Lagna: Dhanu</p><p>H.D. Devegowda Samudaya Bhavana</p></article>
       </div>
     </div>
@@ -63,11 +63,19 @@
       <div class="ornament">❦ ✦ ❦</div><h2>Our Moments</h2>
       <p class="intro">A few memories from our journey together.</p>
       <div class="gallery">
-        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=85" alt="Wedding celebration inspiration" loading="lazy">
-        <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=900&q=85" alt="Wedding couple inspiration" loading="lazy">
-        <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=900&q=85" alt="Wedding details inspiration" loading="lazy">
+        <img src="17-1mb.jpg" alt="Ganesh and Priyanka moment" loading="lazy">
+        <img src="18-1mb.jpg" alt="Ganesh and Priyanka moment" loading="lazy">
+        <img src="20-1mb.jpg" alt="Ganesh and Priyanka moment" loading="lazy">
+        <img src="22-1mb.jpg" alt="Ganesh and Priyanka moment" loading="lazy">
+        <img src="24-1mb.jpg" alt="Ganesh and Priyanka moment" loading="lazy">
+        <img src="35-1mb.jpg" alt="Ganesh and Priyanka moment" loading="lazy">
+        <img src="38-1mb.jpg" alt="Ganesh and Priyanka moment" loading="lazy">
+        <img src="4-1mb.jpg" alt="Ganesh and Priyanka moment" loading="lazy">
+        <img src="42-1mb.jpg" alt="Ganesh and Priyanka moment" loading="lazy">
+        <img src="43-1mb.jpg" alt="Ganesh and Priyanka moment" loading="lazy">
+        <img src="45-1mb.jpg" alt="Ganesh and Priyanka moment" loading="lazy">
       </div>
-      <p class="photo-tip">Replace these sample photos with Ganesh and Priyanka's own photos before sharing.</p>
+      <p class="photo-tip">Captured by VISION CLIPS</p>
     </div>
   </section>
 
@@ -93,12 +101,11 @@
   </footer>
 </main>
 
-<!-- Optional music: add your own licensed MP3 file as music.mp3 in this folder. -->
 <audio id="bgMusic" loop preload="none"><source src="music.mp3" type="audio/mpeg"></audio>
 <button class="music-control hidden" id="musicBtn" title="Play or pause background music" aria-label="Play or pause background music">♫</button>
 
 <script>
-const weddingDate = new Date("2026-10-29T09:40:00+05:30"); // Dhaara Muhurtha starts at 9:40 AM IST
+const weddingDate = new Date("2026-10-29T09:40:00+05:30");
 const $ = id => document.getElementById(id);
 
 function updateCountdown(){
@@ -115,7 +122,6 @@ $("openInvite").addEventListener("click", () => {
   $("invitation").classList.remove("hidden");
   $("musicBtn").classList.remove("hidden");
   $("invitation").scrollIntoView({behavior:"smooth"});
-  // Browsers require a visitor interaction before audio can play.
   $("bgMusic").play().then(()=>{$("musicBtn").textContent="♫";}).catch(()=>{$("musicBtn").textContent="♪";});
   document.querySelectorAll(".fade-in").forEach(el=>observer.observe(el));
 });
@@ -130,14 +136,12 @@ const observer = new IntersectionObserver(entries => {
 },{threshold:.12});
 document.querySelectorAll(".fade-in").forEach(el=>observer.observe(el));
 
-// Save-the-date calendar file (.ics)
-const start = "20261029T041000Z"; // 09:40 IST, 29 October 2026
-const end = "20261029T051000Z";   // 10:40 IST, 29 October 2026
+const start = "20261029T041000Z";
+const end = "20261029T051000Z";
 const ics = `BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//Ganesh and Priyanka//Wedding//EN\nBEGIN:VEVENT\nDTSTAMP:${new Date().toISOString().replace(/[-:]/g,"").replace(/\.\d{3}/,"")}\nDTSTART:${start}\nDTEND:${end}\nSUMMARY:Dhaara Muhurtha - Ganesh and Priyanka\nDESCRIPTION:Wedding ceremony, Lagna Dhanu.\nEND:VEVENT\nEND:VCALENDAR`;
 $("calendarLink").href = URL.createObjectURL(new Blob([ics],{type:"text/calendar"}));
 $("calendarLink").download = "Ganesh-Priyanka-Wedding.ics";
 
-// Confirmed wedding and reception venue.
 const venue = "H.D. Devegowda Samudaya Bhavana, Near Police Quarters, Railway Station Road, K.R. Nagar, Mysuru District";
 $("venueAddress").textContent = venue;
 $("mapLink").href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(venue);
